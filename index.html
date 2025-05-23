@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Sweetheart 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', cursive;
+      background: linear-gradient(to bottom right, #ffe6f0, #ffccd5);
+      color: #e60073;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      transform: rotate(-45deg);
+      animation: fall 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -8px;
+      left: 0;
+    }
+    .heart::after {
+      left: 8px;
+      top: 0;
+    }
+    @keyframes fall {
+      0% {
+        top: -10px;
+        opacity: 1;
+      }
+      100% {
+        top: 110%;
+        opacity: 0;
+      }
+    }
+    .wrapper {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 1rem;
+      animation: fadeIn 2s ease-in-out;
+      z-index: 10;
+      position: relative;
+    }
+    .active {
+      display: flex;
+    }
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 2rem;
+      border-radius: 25px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px rgba(255, 102, 163, 0.3);
+      max-width: 90%;
+    }
+    h1, h2, p {
+      margin: 1rem;
+    }
+    img {
+      max-width: 200px;
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba(255, 102, 163, 0.6);
+      margin-bottom: 1rem;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      background-color: #ff66a3;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff3385;
+      transform: scale(1.05);
+    }
+    .bounce-text {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .typing-text::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="hearts-container"></div>
+
+  <div class="wrapper active" id="step0">
+    <div class="content-container">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDg0bHQ1a2g3bDliYTV3Z3g1YmwxMXI1cnJid3VobnI0eWVvMmh5aSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oz8xIsloV7zOmt81G/giphy.gif" alt="cute gif" />
+      <h1 class="typing-text">Hii Swittii 😍</h1>
+    </div>
+  </div>
+
+  <div class="wrapper" id="step1">
+    <div class="content-container">
+      <img src="https://media.giphy.com/media/J2dTQ36eSGnC0ZxdAM/giphy.gif" alt="question gif" />
+      <h2 class="typing-text">I want to ask something... 🙈</h2>
+    </div>
+  </div>
+
+  <div class="wrapper" id="step2">
+    <div class="content-container">
+      <img src="https://media.giphy.com/media/IwAZ6dvvvaTtdI8SD5/giphy.gif" alt="love me gif" />
+      <h2 class="typing-text">Do you love me? 💘</h2>
+      <div>
+        <button onclick="yesLove()">Yes 💖</button>
+        <button onclick="noLove()">No 😢</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper" id="step3">
+    <div class="content-container">
+      <img src="https://media.giphy.com/media/kc0z4K4K3kA2D3K3K3/giphy.gif" alt="romantic gif" />
+      <h2 class="typing-text">My Love, ❤️</h2>
+      <p class="typing-text">You make my world brighter. Your smile, your heart, your soul – I cherish it all. 💕</p>
+      <h2 class="bounce-text">I love you 💘</h2>
+      <p class="bounce-text">I like you 💞 | Never leave me 🌹 | You're my everything 💍</p>
+      <button onclick="nextStep(4)">Send Me Kiss and Hug 😘</button>
+    </div>
+  </div>
+
+  <div class="wrapper" id="step4">
+    <div class="content-container">
+      <img src="https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif" alt="hug gif" />
+      <h2 class="typing-text">Last Surprise! 🎁</h2>
+      <p class="typing-text">Open your WhatsApp and save my number with the name <strong>"My Love" 💗</strong></p>
+      <p class="typing-text">And don’t forget to send me a kiss 😘 and a warm hug 🤗 on WhatsApp!</p>
+    </div>
+  </div>
+
+  <script>
+    let currentStep = 0;
+
+    const nextStep = (step) => {
+      document.getElementById(`step${currentStep}`).classList.remove('active');
+      document.getElementById(`step${step}`).classList.add('active');
+      currentStep = step;
+    };
+
+    function yesLove() {
+      nextStep(3);
+    }
+
+    function noLove() {
+      alert("Oops! You have to say yes 😛");
+    }
+
+    // Auto step transitions
+    setTimeout(() => nextStep(1), 2000);
+    setTimeout(() => nextStep(2), 4000);
+
+    // Create heart rain
+    const heartContainer = document.getElementById('hearts-container');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+      heart.style.opacity = Math.random();
+      heart.style.fontSize = Math.random() * 10 + 10 + 'px';
+      heartContainer.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    setInterval(createHeart, 200);
+  </script>
+</body>
+</html>
